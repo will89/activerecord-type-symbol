@@ -55,6 +55,14 @@ RSpec.describe ActiveRecord::Type::Symbol do
     end
   end
 
+  context "saving attribute" do
+    let!(:model) { ModelWithSymbolAttribute.create!(data_type: :numeric) }
+
+    it "deserializes to a symbol" do
+      expect(model.reload.data_type).to eq(:numeric)
+    end
+  end
+
   context "dirty tracking" do
     let(:model) { ModelWithSymbolAttribute.new(data_type: :numeric) }
 
@@ -66,6 +74,7 @@ RSpec.describe ActiveRecord::Type::Symbol do
 
       specify do
         expect(model.data_type_was).to eq(:numeric)
+        expect(model.will_save_change_to_data_type?).to be(true)
       end
     end
 
