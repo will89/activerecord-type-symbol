@@ -1,0 +1,4 @@
+postgresql:
+  adapter: postgresql
+  database: active_record_type_symbol_test
+  host: localhost

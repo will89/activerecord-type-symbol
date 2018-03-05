@@ -1,8 +1,17 @@
 module ActiveRecord
   module Type
-    class Symbol
+    class Symbol < ActiveModel::Type::Value
       VERSION = '0.1.0'
-      # Your code goes here...
+
+      def type
+        :symbol
+      end
+
+      private
+
+      def cast_value(value)
+        value.to_sym
+      end
     end
   end
 end
