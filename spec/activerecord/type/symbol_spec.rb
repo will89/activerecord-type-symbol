@@ -36,6 +36,7 @@ RSpec.describe ActiveRecord::Type::Symbol do
 
     context "by attribute setter" do
       let(:model) { ModelWithSymbolAttribute.new }
+
       context "coerces string to symbol" do
         before { model.data_type = 'numeric' }
 
@@ -50,6 +51,32 @@ RSpec.describe ActiveRecord::Type::Symbol do
         specify do
           expect(model.data_type).to eq(:numeric)
         end
+      end
+    end
+  end
+
+  context "dirty tracking" do
+    let(:model) { ModelWithSymbolAttribute.new(data_type: :numeric) }
+
+    context "model changes" do
+      before do
+        model.save
+        model.data_type = :float
+      end
+
+      specify do
+        expect(model.data_type_was).to eq(:numeric)
+      end
+    end
+
+    context "model does not change" do
+      before do
+        model.save
+        model.data_type = :numeric
+      end
+
+      specify do
+        expect(model).not_to be_changed
       end
     end
   end
