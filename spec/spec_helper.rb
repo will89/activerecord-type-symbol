@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "activerecord/type/symbol"
+require "active_record-type-symbol"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
