@@ -6,6 +6,7 @@ require 'fileutils'
 require 'logger'
 require 'yaml'
 require 'database_cleaner'
+require 'with_model'
 
 FileUtils.makedirs('log')
 
@@ -21,6 +22,7 @@ ENV['PGHOST'] ||= db_host if db_host
 DATABASE_NAME = 'active_record_type_symbol_test'.freeze
 
 RSpec.configure do |config|
+  config.extend WithModel
   config.order = 'random'
 
   # Enable flags like --only-failures and --next-failure
