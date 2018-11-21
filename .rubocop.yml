@@ -1,0 +1,27 @@
+Style/WordArray:
+  EnforcedStyle: brackets
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/Documentation:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Naming/FileName:
+  Exclude:
+    - 'lib/active_record-type-symbol.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+    - 'activerecord-type-symbol.gemspec'
+
+Metrics/LineLength:
+  Exclude:
+    - 'activerecord-type-symbol.gemspec'
