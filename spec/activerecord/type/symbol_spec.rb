@@ -76,7 +76,11 @@ RSpec.describe ActiveRecord::Type::Symbol do
 
       specify do
         expect(model.data_type_was).to eq(:numeric)
-        expect(model.will_save_change_to_data_type?).to be(true)
+        if ActiveRecord::VERSION::MAJOR == 5 && ActiveRecord::VERSION::MINOR == 0
+          expect(model.data_type_changed?).to be(true)
+        else
+          expect(model.will_save_change_to_data_type?).to be(true)
+        end
       end
     end
 
