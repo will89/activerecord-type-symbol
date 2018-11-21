@@ -22,7 +22,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+require 'active_record-type-symbol'
+
+class Post < ApplicationRecord
+  # A database column 'post_type' can be used as a symbol by: 
+  attribute :post_type, ActiveRecord::Type::Symbol.new
+  # Or
+  attribute :post_type, :symbol 
+end
+```
 
 ## Development
 
