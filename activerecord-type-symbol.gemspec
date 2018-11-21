@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'activerecord-type-symbol'
-  spec.version       = '0.1.0'
+  spec.version       = '0.2.0'
   spec.authors       = ['Will Leonard']
   spec.email         = ['will.leonard89@gmail.com']
 
@@ -31,7 +31,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'activerecord', '>= 5.0', '< 5.3'
 
   spec.add_development_dependency 'appraisal'
-  spec.add_development_dependency 'bundler', '~> 1.14'
   spec.add_development_dependency 'database_cleaner'
   spec.add_development_dependency 'pg', '~> 0.18'
   spec.add_development_dependency 'rake', '~> 10.0'
