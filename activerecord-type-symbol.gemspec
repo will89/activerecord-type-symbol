@@ -14,10 +14,10 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
 
   spec.metadata      = {
-      'homepage_uri' => 'https://github.com/will89/activerecord-type-symbol',
-      'changelog_uri' => 'https://github.com/will89/activerecord-type-symbol/blob/master/CHANGELOG.md',
-      'source_code_uri' => 'https://github.com/will89/activerecord-type-symbol/',
-      'bug_tracker_uri' => 'https://github.com/will89/activerecord-type-symbol/issues'
+    'homepage_uri' => 'https://github.com/will89/activerecord-type-symbol',
+    'changelog_uri' => 'https://github.com/will89/activerecord-type-symbol/blob/master/CHANGELOG.md',
+    'source_code_uri' => 'https://github.com/will89/activerecord-type-symbol/',
+    'bug_tracker_uri' => 'https://github.com/will89/activerecord-type-symbol/issues'
   }
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
