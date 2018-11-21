@@ -1,5 +1,3 @@
-require "bundler/setup"
-
 require 'active_record'
 require "active_record-type-symbol"
 require 'fileutils'
