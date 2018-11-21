@@ -1,7 +1,7 @@
-require "spec_helper"
+require 'spec_helper'
 
 RSpec.describe ActiveRecord::Type::Symbol do
-  it "has a version number" do
+  it 'has a version number' do
     expect(ActiveRecord::Type::Symbol::VERSION).not_to be nil
   end
 
@@ -15,9 +15,9 @@ RSpec.describe ActiveRecord::Type::Symbol do
     end
   end
 
-  context "attribute assignment" do
-    context "by initializer" do
-      context "coerces string to symbol" do
+  context 'attribute assignment' do
+    context 'by initializer' do
+      context 'coerces string to symbol' do
         let(:model) { ModelWithSymbolAttribute.new(data_type: 'numeric') }
 
         specify do
@@ -25,7 +25,7 @@ RSpec.describe ActiveRecord::Type::Symbol do
         end
       end
 
-      context "coerces symbol to symbol" do
+      context 'coerces symbol to symbol' do
         let(:model) { ModelWithSymbolAttribute.new(data_type: :numeric) }
 
         specify do
@@ -34,10 +34,10 @@ RSpec.describe ActiveRecord::Type::Symbol do
       end
     end
 
-    context "by attribute setter" do
+    context 'by attribute setter' do
       let(:model) { ModelWithSymbolAttribute.new }
 
-      context "coerces string to symbol" do
+      context 'coerces string to symbol' do
         before { model.data_type = 'numeric' }
 
         specify do
@@ -45,7 +45,7 @@ RSpec.describe ActiveRecord::Type::Symbol do
         end
       end
 
-      context "coerces symbol to symbol" do
+      context 'coerces symbol to symbol' do
         before { model.data_type = :numeric }
 
         specify do
@@ -55,18 +55,18 @@ RSpec.describe ActiveRecord::Type::Symbol do
     end
   end
 
-  context "saving attribute" do
+  context 'saving attribute' do
     let!(:model) { ModelWithSymbolAttribute.create!(data_type: :numeric) }
 
-    it "deserializes to a symbol" do
+    it 'deserializes to a symbol' do
       expect(model.reload.data_type).to eq(:numeric)
     end
   end
 
-  context "dirty tracking" do
+  context 'dirty tracking' do
     let(:model) { ModelWithSymbolAttribute.new(data_type: :numeric) }
 
-    context "model changes" do
+    context 'model changes' do
       before do
         model.save
         model.data_type = :float
@@ -78,7 +78,7 @@ RSpec.describe ActiveRecord::Type::Symbol do
       end
     end
 
-    context "model does not change" do
+    context 'model does not change' do
       before do
         model.save
         model.data_type = :numeric
