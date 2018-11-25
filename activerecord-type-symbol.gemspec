@@ -36,6 +36,12 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rubocop'
-  spec.add_development_dependency 'sqlite3'
   spec.add_development_dependency 'with_model'
+
+  if RUBY_PLATFORM == 'java'
+    spec.add_development_dependency 'activerecord-jdbcsqlite3-adapter'
+    spec.add_development_dependency 'jdbc-sqlite3'
+  else
+    spec.add_development_dependency 'sqlite3'
+  end
 end
