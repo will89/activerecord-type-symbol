@@ -14,10 +14,8 @@ ActiveRecord::Base.logger = Logger.new('log/test.log')
 ActiveRecord::Base.logger.level = Logger::DEBUG
 ActiveRecord::Migration.verbose = false
 
-db_adapter = ENV.fetch('ADAPTER', 'postgresql')
+db_adapter = ENV.fetch('ADAPTER', 'sqlite3')
 db_config = YAML.safe_load(File.read('spec/db/database.yml'))
-db_host = db_config[db_adapter]['host']
-ENV['PGHOST'] ||= db_host if db_host
 
 DATABASE_NAME = 'active_record_type_symbol_test'
 

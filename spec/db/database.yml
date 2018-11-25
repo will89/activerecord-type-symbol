@@ -1,4 +1,3 @@
-postgresql:
-  adapter: postgresql
-  database: active_record_type_symbol_test
-  host: localhost
+sqlite3:
+  adapter: sqlite3
+  database: ":memory:"
