@@ -29,8 +29,8 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.3'
 
-  spec.add_dependency 'activemodel', '>= 5.0'
-  spec.add_dependency 'activerecord', '>= 5.0'
+  spec.add_dependency 'activemodel', '>= 5.0', '< 6.1'
+  spec.add_dependency 'activerecord', '>= 5.0', '< 6.1'
 
   spec.add_development_dependency 'appraisal'
   spec.add_development_dependency 'bundler', '>= 1.3.0'
@@ -38,11 +38,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'sqlite3'
   spec.add_development_dependency 'with_model'
-
-  if RUBY_PLATFORM == 'java'
-    spec.add_development_dependency 'activerecord-jdbcsqlite3-adapter'
-  else
-    spec.add_development_dependency 'sqlite3'
-  end
 end

@@ -10,8 +10,6 @@ rvm:
   - 2.4.5
   - 2.5.3
   - 2.6.0
-  - jruby-9.1.17.0
-  - jruby-9.2.5.0
 script:
 - bundle exec rspec
 - bundle exec rubocop
@@ -20,6 +18,4 @@ matrix:
   - rvm: 2.3.8
     gemfile: gemfiles/rails_6.0.gemfile
   - rvm: 2.4.5
-    gemfile: gemfiles/rails_6.0.gemfile
-  - rvm: jruby-9.1.17.0
     gemfile: gemfiles/rails_6.0.gemfile
