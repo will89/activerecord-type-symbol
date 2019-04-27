@@ -95,4 +95,43 @@ RSpec.describe ActiveRecord::Type::Symbol do
       end
     end
   end
+
+  context 'default value' do
+    with_model :ModelWithSymbolAttributeWithDefaultValue do
+      table do |t|
+        t.string :data_type
+      end
+
+      model do
+        attribute :data_type, :symbol, default: :string
+      end
+    end
+
+    context 'new record' do
+      let(:model) { ModelWithSymbolAttributeWithDefaultValue.new }
+
+      specify 'returns the default value' do
+        expect(model.data_type).to eq(:string)
+      end
+    end
+
+    context 'saved record' do
+      let(:model) { ModelWithSymbolAttributeWithDefaultValue.create }
+
+      specify 'returns the default value' do
+        model.reload
+        expect(model.data_type).to eq(:string)
+      end
+    end
+
+    context 'saved record with nil in the database' do
+      let(:model) { ModelWithSymbolAttributeWithDefaultValue.create }
+
+      specify 'returns nil' do
+        model.update(data_type: nil)
+        model.reload
+        expect(model.data_type).to eq(nil)
+      end
+    end
+  end
 end
