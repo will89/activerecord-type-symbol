@@ -33,7 +33,12 @@ class Post < ApplicationRecord
   # A database column 'post_type' can be used as a symbol by: 
   attribute :post_type, ActiveRecord::Type::Symbol.new
   # Or
-  attribute :post_type, :symbol 
+  attribute :post_type, :symbol
+  
+  # Using a default value
+  attribute :post_type, :symbol, default: :comment
+  # If the post_type column has a nil value in the database
+  # the post_type attribute will return nil.
 end
 ```
 
