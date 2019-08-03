@@ -17,6 +17,6 @@ appraise 'rails-5.2' do
 end
 
 appraise 'rails-6.0' do
-  gem 'activerecord', '6.0.0.rc1'
-  gem 'activemodel', '6.0.0.rc1'
+  gem 'activerecord', '6.0.0.rc2'
+  gem 'activemodel', '6.0.0.rc2'
 end
