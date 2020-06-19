@@ -1,6 +1,7 @@
 # Changelog
 
 ### Unreleased
+- Drop support for ruby < 2.5
 
 ### 0.3.0
 - Support rails 6.0
