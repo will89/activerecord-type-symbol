@@ -20,3 +20,8 @@ appraise 'rails-6.0' do
   gem 'activerecord', '6.0.3.3'
   gem 'activemodel', '6.0.3.3'
 end
+
+appraise 'rails-6.1' do
+  gem 'activerecord', '6.1.0'
+  gem 'activemodel', '6.1.0'
+end
