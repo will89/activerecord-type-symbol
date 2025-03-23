@@ -30,7 +30,7 @@ jobs:
         run: bundle install --gemfile=${{ matrix.gemfile }} --jobs 4 --retry 3
 
       - name: Run RSpec
-        run: bundle exec rspec --require rails_helper
+        run: bundle exec rspec
 
   rubocop:
     runs-on: ubuntu-latest
@@ -49,4 +49,4 @@ jobs:
         run: bundle install --jobs 4 --retry 3
 
       - name: Run RuboCop
-        run: bundle exec rubocop --require rails_helper
+        run: bundle exec rubocop
