@@ -30,7 +30,7 @@ jobs:
         run: bundle install --gemfile=${{ matrix.gemfile }} --jobs 4 --retry 3
 
       - name: Run RSpec
-        run: bundle exec rspec
+        run: BUNDLE_GEMFILE=${{ matrix.gemfile }} bundle exec rspec
 
   rubocop:
     runs-on: ubuntu-latest
@@ -49,4 +49,4 @@ jobs:
         run: bundle install --jobs 4 --retry 3
 
       - name: Run RuboCop
-        run: bundle exec rubocop
+        run: BUNDLE_GEMFILE=${{ matrix.gemfile }} bundle exec rubocop
