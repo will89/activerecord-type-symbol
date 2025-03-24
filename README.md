@@ -1,10 +1,8 @@
 # ActiveRecord::Type::Symbol
 
 [![Gem Version](https://badge.fury.io/rb/activerecord-type-symbol.svg)][gem]
-[![Build Status](https://travis-ci.com/will89/activerecord-type-symbol.svg?branch=master)][travis]
 
 [gem]: https://rubygems.org/gems/activerecord-type-symbol
-[travis]: http://travis-ci.com/will89/activerecord-type-symbol
 
 Adds an ActiveRecord Symbol type to the ActiveRecord attributes API.
 

@@ -1,0 +1,52 @@
+name: Ruby CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: ['2.7.5', '3.0.3', '3.1.0']
+        gemfile: ['gemfiles/rails_6.0.gemfile', 'gemfiles/rails_6.1.gemfile', 'gemfiles/rails_7.0.gemfile']
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install --gemfile=${{ matrix.gemfile }} --jobs 4 --retry 3
+
+      - name: Run RSpec
+        run: BUNDLE_GEMFILE=${{ matrix.gemfile }} bundle exec rspec
+
+  rubocop:
+    runs-on: ubuntu-latest
+    needs: test # Ensure tests run first
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7.5' # Or any version you want to use for RuboCop
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install --jobs 4 --retry 3
+
+      - name: Run RuboCop
+        run: BUNDLE_GEMFILE=${{ matrix.gemfile }} bundle exec rubocop
