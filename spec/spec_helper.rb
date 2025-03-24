@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
+require 'logger'
 require 'active_record'
 require 'active_record-type-symbol'
 require 'fileutils'
-require 'logger'
 require 'yaml'
 require 'database_cleaner'
 require 'with_model'
