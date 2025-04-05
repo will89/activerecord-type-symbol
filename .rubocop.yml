@@ -25,7 +25,7 @@ Metrics/BlockLength:
     - 'spec/**/*.rb'
     - 'activerecord-type-symbol.gemspec'
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
   Exclude:
     - 'activerecord-type-symbol.gemspec'
