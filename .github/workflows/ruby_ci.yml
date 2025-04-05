@@ -13,13 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: ['2.7.8', '3.0.7', '3.1.7']
-        gemfile: ['gemfiles/rails_7.0.gemfile', 'gemfiles/rails_7.1.gemfile', 'gemfiles/rails_7.2.gemfile']
+        ruby-version: ['3.1.7', '3.2.8', '3.3.7', '3.4.2']
+        gemfile: ['gemfiles/rails_7.2.gemfile', 'gemfiles/rails_8.0.gemfile']
         exclude:
-          - ruby-version: '2.7.8'
-            gemfile: 'gemfiles/rails_7.2.gemfile'
-          - ruby-version: '3.0.7'
-            gemfile: 'gemfiles/rails_7.2.gemfile'
+          - ruby-version: '3.1.7'
+            gemfile: 'gemfiles/rails_8.0.gemfile'
 
     steps:
       - name: Checkout code
