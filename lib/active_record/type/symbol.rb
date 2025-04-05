@@ -3,7 +3,7 @@
 module ActiveRecord
   module Type
     class Symbol < ActiveModel::Type::Value
-      VERSION = '0.5.0'
+      VERSION = '0.6.0'
 
       def type
         :symbol
