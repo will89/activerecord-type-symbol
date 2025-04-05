@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.0
+- Support 8.0
+- Drop support rails < 7.2
+
 ## 0.6.0
 - Support rails 7.1 and 7.2
 - Drop support rails < 7.0
