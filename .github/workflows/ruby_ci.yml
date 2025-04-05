@@ -45,7 +45,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7.5' # Or any version you want to use for RuboCop
+          ruby-version: '3.1.7' # Or any version you want to use for RuboCop
           bundler-cache: true
 
       - name: Install dependencies
